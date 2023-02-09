@@ -1,9 +1,8 @@
-"""This program consist of four main functions and some auxiliary ones
+"""This program consist of three main functions and some auxiliary ones
 
 The first one changes numbers from base 10 to base N.
 The second one changes numbers from base N to base 10.
 The third one changes numbers from base N to base M.
-The fourth one changes numbers in base N to their floating comma representation.
 """
 from math import floor
 
@@ -17,12 +16,11 @@ def whole_part(integer, base=2):
     a=b·(b·q_2+r_2)+r_1=b^2·q_2+b·r_2+r_1. We repeat this process until some q_n is smaller than b, and obtain
     a=b^n·q_n+b^(n-1)·r_n+b^(n-2)·r_(n-1)+...+b·r_2+r_1, with q_n<b and r_i<b for all i=1,...,n.
     Therefore, a=(q_n,r_n,r_(n_1),...,r_2,r_1)_b.
-    
+
     This loop implements the algorithm described above.
     """
     while integer >= base:
         digits_backwards.append(integer % base)
-        print(integer)
         integer //= base
 
     digits_backwards.append(integer)
@@ -42,9 +40,9 @@ def decimal_part(number, base=2):
     Let 0.abcd... be the number's representation in base N. If we multiply it by N we get a.bcde... Since
     (N·x)_10=(N·x)_N, we can use this to know the number's representation in base N using the floor function to 
     extract the value of a.
-    
+
     At each iteration of the loop, we substract the whole part of the number. The process follows this scheme:
-    
+
     0.abcd... -> a.bcde -> 0.bcde -> b.cdef -> 0.cdef -> c.defg -> 0.defg -> ...     
     """
     digit_count = 1
