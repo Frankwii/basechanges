@@ -132,9 +132,3 @@ def floating_comma(number, base=2):
         number /= base
 
     return sign, ten_to_n(number), base, exponent
-
-
-# Receives a tuple with the sign, mantissa, base and exponent of a number and returns its IEEE32 representation,
-# if possible.
-def representation_IEEE32(floatingcomma_tuple):
-    print("hi")
