@@ -1,1 +1,1 @@
-A few functions that change numbers from some bases to others and print the numbers in those bases.
+A few functions that allow to change numbers from a numerical base to any other one.
